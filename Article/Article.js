@@ -25,4 +25,5 @@ class Article {
 
 */
 
-let articles;
+let articles = document.querySelectorAll('.article');
+
