@@ -1,14 +1,5 @@
-
-
-const toggleMenu = () => {
-    // Toggle the "menu--open" class on your menu refence.
-}
-
-// Start Here: Create a reference to the ".menu" class
-const menu;
-// create a reference to the ".menu-button" class
-const menuButton;
-// Using your menuButton reference, add a click handler that calls toggleMenu/* This is the data we will be using, study it but don't change anything, yet.
+/** New Assignment **/
+/* This is the data we will be using, study it but don't change anything, yet. */
 
 let menuItems = [
     'Students',
@@ -35,12 +26,10 @@ let menuItems = [
   Step 5: return the menu component.
   Step 6: add the menu component to the DOM.
 
-
-
-
- const toggleMenu = () => {
+*/
+const toggleMenu = () => {
     // Toggle the "menu--open" class on your menu reference.
-menu.classList.toggle('menu--open')
+    menu.classList.toggle('menu--open')
 };
 
 // Start Here: Create a reference to the ".menu" class
@@ -53,4 +42,3 @@ let menuButton = document.querySelector('.menu-button');
 menuButton.addEventListener('click', function ()  {
     toggleMenu();
 } );
-
