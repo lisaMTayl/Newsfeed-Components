@@ -110,13 +110,15 @@ const articles = document.querySelector('.articles');
 
 function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph) {
   // Define new elements
-  const article = document.querySelector('div');
-  const articleTitle = document.querySelector('h2');
-  const articleDate = document.querySelector('p');
-  const articleTxt1 = document.querySelectorAll('p');
-  const articleTxt2 = document.querySelectorAll('p');
-  const articleTxt3 = document.querySelectorAll('p');
-  const articleBtn = document.querySelector( 'span');
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articleTxt1 = document.createElement('p');
+  const articleTxt2 = document.createElement('p');
+  const articleTxt3 = document.createElement('p');
+  const articleBtn = document.createElement( 'span');
+
+/** Dufus moment --  I initially defined the elements using querySelector instead of createElement and couldn't figure out why it wasn't working!!! **/
 
 
   // Setup structure of elements
