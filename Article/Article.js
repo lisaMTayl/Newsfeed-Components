@@ -104,11 +104,60 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 */
 
+// Step 1:  Create a function that creates a component.
+
+const articles = document.querySelector('.articles');
+
+function createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  // Define new elements
+  const article = document.querySelector('div');
+  const articleTitle = document.querySelector('h2');
+  const articleDate = document.querySelector('p');
+  const articleTxt1 = document.querySelectorAll('p');
+  const articleTxt2 = document.querySelectorAll('p');
+  const articleTxt3 = document.querySelectorAll('p');
+  const articleBtn = document.querySelector( 'span');
 
 
+  // Setup structure of elements
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(articleTxt1);
+  article.appendChild(articleTxt2);
+  article.appendChild(articleTxt3);
+  article.appendChild(articleBtn);
+
+  // Set class names
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  articleBtn.classList.add('expandButton');
+
+  // Set text content
+  articleBtn.textContent = 'Expand';
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  articleTxt1.textContent = firstParagraph;
+  articleTxt2.textContent = secondParagraph;
+  articleTxt3.textContent = thirdParagraph;
+
+  // Step 2: Add an event listener to the expandButton span.
+  // Button events
+  articleBtn.addEventListener('click', event => {
+    console.log('button clicked', event.target);
+    article.classList.toggle('article-open');
+  });
+
+  // Step 3:
+  return article;
+}
+
+  // Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+data.forEach(data => {
+  articles.appendChild(createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+});
 
 
-
+  // Step 5: Add a new article to the array.
 /** Assignment completed using classes
 
 // Because classes are not hoisted you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
@@ -132,7 +181,7 @@ class Article {
   }
 }
 
-/* START HERE: 
+/* START HERE:
 
 - Select all classes named ".article" and assign that value to the articles variable.
 - With your selection in place, now chain .forEach() on to the articles variable to iterate over the articles NodeList and create a new instance of Article by passing in each article as a parameter to the Article class.
