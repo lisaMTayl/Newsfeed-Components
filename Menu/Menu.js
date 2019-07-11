@@ -27,6 +27,40 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
 
 */
+
+
+const header = document.querySelector('.header');
+header.appendChild(createMenu(menuItems));
+
+function createMenu(menuItems) {
+    // define the elements
+    const menu = document.createElement('div');
+    const uList = document.createElement('ul');
+    const listItem = document.createElement('li');
+
+    // setup structure of the elements
+    menu.appendChild(uList);
+    uList.appendChild(listItem);
+
+     // toggle menu button
+    let menuButton = document.querySelector('.menu-button');
+        menuButton.addEventListener('click', event => {
+        header.classList.toggle('menu--open');
+    });
+
+    menuItems.forEach(listItem => {
+        uList.appendChild(listItem);
+        listItem.textContent = menuItems;
+
+    return menu;
+});
+
+
+
+}
+
+
+/** previous version***
 const toggleMenu = () => {
     // Toggle the "menu--open" class on your menu reference.
     menu.classList.toggle('menu--open')
@@ -42,3 +76,4 @@ let menuButton = document.querySelector('.menu-button');
 menuButton.addEventListener('click', function ()  {
     toggleMenu();
 } );
+ **********/
